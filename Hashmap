@@ -1,0 +1,19 @@
+import java.util.HashMap;
+import java.util.Scanner;
+public class LoginSystem {
+    public static void main(String[] args) {
+        HashMap<String, String> credentials = new HashMap<>();
+        credentials.put("admin@123", "admin@123");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Username: ");
+        String inputUsername = scanner.nextLine();
+        System.out.print("Enter Password: ");
+        String inputPassword = scanner.nextLine();
+        if (credentials.containsKey(inputUsername) && credentials.get(inputUsername).equals(inputPassword)) {
+            System.out.println("Welcome to Home page.");
+        } else {
+            System.out.println("Invalid username or password.");
+        }
+        scanner.close();
+    }
+}
